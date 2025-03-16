@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCP Chat", "TCP Chat.vcxproj", "{104DB880-CD71-41FF-BCD8-01B1083A5328}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{104DB880-CD71-41FF-BCD8-01B1083A5328}.Debug|x64.ActiveCfg = Debug|x64
+		{104DB880-CD71-41FF-BCD8-01B1083A5328}.Debug|x64.Build.0 = Debug|x64
+		{104DB880-CD71-41FF-BCD8-01B1083A5328}.Debug|x86.ActiveCfg = Debug|Win32
+		{104DB880-CD71-41FF-BCD8-01B1083A5328}.Debug|x86.Build.0 = Debug|Win32
+		{104DB880-CD71-41FF-BCD8-01B1083A5328}.Release|x64.ActiveCfg = Release|x64
+		{104DB880-CD71-41FF-BCD8-01B1083A5328}.Release|x64.Build.0 = Release|x64
+		{104DB880-CD71-41FF-BCD8-01B1083A5328}.Release|x86.ActiveCfg = Release|Win32
+		{104DB880-CD71-41FF-BCD8-01B1083A5328}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B58CCF9-0B8D-4A85-BB62-B8242EB7DDD1}
+	EndGlobalSection
+EndGlobal
