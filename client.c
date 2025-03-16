@@ -7,6 +7,7 @@
 #pragma comment(lib, "Ws2_32.lib")
 
 SOCKET client_socket;
+char username[512];
 
 DWORD WINAPI receiveMessages(LPVOID lpParam) {
 	char buffer[1024];
@@ -33,6 +34,12 @@ DWORD WINAPI receiveMessages(LPVOID lpParam) {
 }
 
 int main(void) {
+
+	fprintf(stdout, "Enter your username: ");
+	fgets(username, 512, stdin);
+
+	username[strcspn(username, "\n")] = '\0';
+	snprintf(username + strlen(username), sizeof(username) - strlen(username), "%s", ": ");
 
 	// Initialize Winsock
 	WSADATA winsock_data;
@@ -83,13 +90,19 @@ int main(void) {
 	char message[1024];
 
 	while (1) {
-		//printf("Enter a message (or type 'exit' to quit): ");
+		char full_message[1024];
+		strcpy_s(full_message, sizeof(full_message), username);
+
+		printf("Enter a message (or type 'exit' to quit): ");
 		fgets(message, 1024, stdin);
 		message[strcspn(message, "\n")] = '\0';
 
 		if (strcmp(message, "exit") == 0) break;
 
-		int iResult = send(client_socket, message, (int)strlen(message), 0);
+		// Use snprintf to safely concatenate strings
+		snprintf(full_message + strlen(full_message), sizeof(full_message) - strlen(full_message), "%s", message);
+
+		int iResult = send(client_socket, full_message, (int)strlen(full_message), 0);
 		if (iResult == SOCKET_ERROR) {
 			fprintf(stderr, "Send failed with error: %d\n", WSAGetLastError());
 			closesocket(client_socket);
